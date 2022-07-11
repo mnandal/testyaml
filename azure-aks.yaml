@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-springweb-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: my-springweb-app
+  template:
+    metadata:
+      labels:
+        app: my-springweb-app
+    spec:
+      containers:
+      - name: my-springweb-app
+        image: testmanishaacr.azurecr.io/demotomcat8
+        ports:
+        - containerPort: 8080
+# service type loadbalancer       
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-springweb-app-svc
+spec:
+  selector:
+    app: my-springweb-app
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: LoadBalancer
