@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: my-springweb-app
-        image: testmanishaacr.azurecr.io/testp:latest
+        image: testmanishaacr.azurecr.io/testp
         ports:
         - containerPort: 8080
 # service type loadbalancer       
