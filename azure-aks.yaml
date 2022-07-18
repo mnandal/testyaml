@@ -1,42 +1,41 @@
-
-    apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2  
-    kind: Deployment  
-    metadata:  
-      name: my-springweb-deployment  
-      labels:  
-        app: my-springweb-app  
-    spec:  
-      selector:  
-        matchLabels:  
-          app: my-springweb-app  
-      replicas: 1  
-      template:  
-        metadata:  
-          labels:  
-            app: my-springweb-app  
-        spec:  
-          containers:  
-          - name: my-springweb-app  
-            image: testmanishaacr.azurecr.io/testp  
-            command:  
-            - my-springweb-app-server  
-            - "/my-springweb-app/my-springweb-app.conf"  
-            volumeMounts:  
-            - mountPath: /my-springweb-deployment  
-              name: config  
-            resources:  
-              requests:  
-                cpu: 100m  
-                memory: 100Mi  
-            ports:  
-            - containerPort: 8080  
-          volumes:  
-            - name: config  
-              configMap:  
-                name: example-test-config  
-                items:  
-                - key: test-config  
-                  path: my-springweb-app.conf  
+apiVersion: apps/v1 # for versions before 1.9.0 use apps/v1beta2  
+kind: Deployment  
+metadata:  
+  name: my-springweb-deployment  
+  labels:  
+	app: my-springweb-app  
+spec:  
+  selector:  
+	matchLabels:  
+	  app: my-springweb-app  
+  replicas: 1  
+  template:  
+	metadata:  
+	  labels:  
+		app: my-springweb-app  
+	spec:  
+	  containers:  
+	  - name: my-springweb-app  
+		image: testmanishaacr.azurecr.io/testp  
+		command:  
+		- my-springweb-app-server  
+		- "/my-springweb-app/my-springweb-app.conf"  
+		volumeMounts:  
+		- mountPath: /my-springweb-deployment  
+		  name: config  
+		resources:  
+		  requests:  
+			cpu: 100m  
+			memory: 100Mi  
+		ports:  
+		- containerPort: 8080  
+	  volumes:  
+		- name: config  
+		  configMap:  
+			name: example-test-config  
+			items:  
+			- key: test-config  
+			  path: my-springweb-app.conf  
 # service type loadbalancer       
 ---
 	apiVersion: v1
