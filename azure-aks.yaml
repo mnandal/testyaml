@@ -17,7 +17,7 @@ spec:
         image: testmanishaacr.azurecr.io/testp
         command:  
         - my-springweb-app  
-        - "/my-springweb-app/test.conf"
+        - "/my-springweb-deployment/test.conf"
         ports:
         - containerPort: 8080
         volumeMounts:  
