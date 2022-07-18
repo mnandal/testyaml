@@ -37,8 +37,8 @@
                 items:  
                 - key: test-config  
                   path: my-springweb-app.conf  
-	# service type loadbalancer       
-	---
+# service type loadbalancer       
+---
 	apiVersion: v1
 	kind: Service
 	metadata:
