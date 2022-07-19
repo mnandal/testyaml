@@ -18,8 +18,8 @@ spec:
         volumeMounts:
         - mountPath: /myspringwebapp
           name: config
-          ports:
-           - containerPort: 8080
+        ports:
+        - containerPort: 8080
     volumes:
         - name: config
           configMap:
