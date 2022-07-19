@@ -15,18 +15,18 @@ spec:
       containers:
       - name: myspringwebapp
         image: testmanishaacr.azurecr.io/testp
-		volumeMounts:
+	volumeMounts:
         - mountPath: /myspringwebapp
           name: config
-		ports:
+	ports:
         - containerPort: 8080
-	volumes:
-        - name: config
-          configMap:
-            name: example-test-config
-            items:
-            - key: example-test-config
-              path: test.conf
+volumes:
+   - name: config
+     configMap:
+     	name: example-test-config
+        items:
+        - key: example-test-config
+          path: test.conf
 # service type loadbalancer        
 ---
 apiVersion: v1
