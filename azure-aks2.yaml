@@ -15,25 +15,8 @@ spec:
       containers:
       - name: myspringwebapp
         image: testmanishaacr.azurecr.io/testp
-        volumeMounts:
-        - mountPath: /myspringwebapp
-          name: config
         ports:
         - containerPort: 8080
-        env:
-            - name: configkey
-              valueFrom:
-                secretKeyRef:
-                  name: mysecret
-                  key: configkey
-                  optional: true
-      volumes:
-        - name: config
-          configMap:
-            name: example-test-config
-            items:
-            - key: test-config
-              path: test.conf
 # service type loadbalancer       
 ---
 apiVersion: v1
