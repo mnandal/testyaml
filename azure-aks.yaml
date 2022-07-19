@@ -1,0 +1,43 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: myspringwebapp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: myspringwebapp
+  template:
+    metadata:
+      labels:
+        app: myspringwebapp
+    spec:
+      containers:
+      - name: myspringwebapp
+        image: testmanishaacr.azurecr.io/testp
+        volumeMounts:
+        - mountPath: /myspringwebapp
+          name: config
+          ports:
+        - containerPort: 8080
+    volumes:
+        - name: config
+          configMap:
+            name: example-test-config
+            items:
+            - key: example-test-config
+              path: test.conf
+# service type loadbalancer       
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: myspringwebapp-svc
+spec:
+  selector:
+    app: myspringwebapp
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  type: LoadBalancer
