@@ -27,7 +27,7 @@ spec:
             items:
             - key: example-test-config
               path: test.conf
-# service type loadbalancer       
+# service type loadbalancer        
 ---
 apiVersion: v1
 kind: Service
