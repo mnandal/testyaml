@@ -24,9 +24,7 @@ spec:
         - name: config
           configMap:
             name: test-configmap
-            items:
-            - key: configkey
-              path: test.conf
+            
 # service type loadbalancer       
 ---
 apiVersion: v1
