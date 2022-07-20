@@ -23,7 +23,7 @@ spec:
       volumes:
         - name: config
           configMap:
-            name: test-configmap
+            name: example-test-configmap
             
 # service type loadbalancer       
 ---
