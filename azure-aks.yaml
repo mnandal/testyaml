@@ -25,7 +25,7 @@ spec:
           configMap:
             name: test-configmap
             items:
-            - key: test-configmap
+            - key: configkey
               path: test.conf
 # service type loadbalancer       
 ---
