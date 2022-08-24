@@ -19,7 +19,7 @@ spec:
         - mountPath: /myspringwebapp
           name: config
         ports:
-        - containerPort: 8443
+        - containerPort: 443
       volumes:
         - name: config
           configMap:
