@@ -19,7 +19,7 @@ spec:
         - mountPath: /myspringwebapp
           name: config
         ports:
-        - containerPort: 8080
+        - containerPort: 8443
       volumes:
         - name: config
           configMap:
@@ -36,6 +36,6 @@ spec:
     app: myspringwebapp
   ports:
     - protocol: TCP
-      port: 8080
-      targetPort: 8080
+      port: 8443
+      targetPort: 8443
   type: LoadBalancer
