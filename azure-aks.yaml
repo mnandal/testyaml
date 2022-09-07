@@ -17,11 +17,11 @@ spec:
         image: testmanishaacr.azurecr.io/testp
         volumeMounts:
         - mountPath: /testContainer1
-          name: test2
+          name: volume
         ports:
         - containerPort: 8443
       volumes:
-        - name: test2
+        - name: volumne
           azureFile:
            secretName: storage-secret
            shareName: testContainer1
