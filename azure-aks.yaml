@@ -16,14 +16,16 @@ spec:
       - name: myspringwebapp
         image: testmanishaacr.azurecr.io/testp
         volumeMounts:
-        - mountPath: /myspringwebapp
-          name: config
+        - mountPath: /testcontainer1
+          name: azureapplogfiles
         ports:
         - containerPort: 8443
       volumes:
-        - name: config
-          configMap:
-            name: example-test-config
+        - name: azureapplogfiles
+          azureFile:
+           secretName: storage-secret
+           shareName: testcontainer1
+           readOnly: false
             
 # service type loadbalancer       
 ---
