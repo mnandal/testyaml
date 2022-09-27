@@ -15,12 +15,12 @@ spec:
     metadata:
       labels:
         app: myspringwebapp
+    variables:
+        - group: TestVariablegroup    
     spec:
       containers:
       - name: myspringwebapp
         image: testmanishaacr.azurecr.io/testp
-        variables:
-        - group: TestVariablegroup
         volumeMounts:
         - mountPath: /testfileshare1
           name: azurefileshares
