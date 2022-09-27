@@ -1,5 +1,5 @@
 apiVersion: apps/v1
-kind: deployments
+kind: deployment
 metadata:
   name: myspringwebapp-deployment
   labels:
