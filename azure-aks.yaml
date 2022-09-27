@@ -1,12 +1,17 @@
 apiVersion: apps/v1
-kind: Deployment
+kind: StatefulSet
 metadata:
   name: myspringwebapp-deployment
+  labels:
+    app: springwebapp
 spec:
   replicas: 1
   selector:
     matchLabels:
       app: myspringwebapp
+  serviceName: "myspringwebapp"
+  variables:
+        - group: TestVariablegroup
   template:
     metadata:
       labels:
@@ -16,16 +21,18 @@ spec:
       - name: myspringwebapp
         image: testmanishaacr.azurecr.io/testp
         volumeMounts:
-        - mountPath: /testcontainer1
-          name: volume
+        - mountPath: /testfileshare1
+          name: azurefileshares
         ports:
         - containerPort: 8443
       volumes:
-        - name: volume
+        - name: azurefileshares
           azureFile:
-           secretName: storage-secret
-           shareName: testcontainer1
-           readOnly: false
+            secretName: storage-secret
+            shareName: testfileshare1
+            readOnly: false
+      
+
             
 # service type loadbalancer       
 ---
@@ -33,6 +40,7 @@ apiVersion: v1
 kind: Service
 metadata:
   name: myspringwebapp-svc
+  namespace: #{namespace}
 spec:
   selector:
     app: myspringwebapp
