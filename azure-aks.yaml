@@ -1,3 +1,6 @@
+variables:
+        - group: TestVariablegroup  
+      
 apiVersion: apps/v1
 kind: StatefulSet
 metadata:
@@ -24,8 +27,6 @@ spec:
           name: azurefileshares
         ports:
         - containerPort: 8443
-      variables:
-        - group: TestVariablegroup  
       volumes:
         - name: azurefileshares
           azureFile:
