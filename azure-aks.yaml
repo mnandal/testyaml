@@ -2,7 +2,7 @@ variables:
         - group: TestVariablegroup  
       
 apiVersion: apps/v1
-kind: StatefulSet
+kind: deployments
 metadata:
   name: myspringwebapp-deployment
   labels:
