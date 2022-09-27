@@ -10,8 +10,7 @@ spec:
     matchLabels:
       app: myspringwebapp
   serviceName: "myspringwebapp"
-  variables:
-        - group: TestVariablegroup
+  
   template:
     metadata:
       labels:
@@ -20,6 +19,8 @@ spec:
       containers:
       - name: myspringwebapp
         image: testmanishaacr.azurecr.io/testp
+        variables:
+        - group: TestVariablegroup
         volumeMounts:
         - mountPath: /testfileshare1
           name: azurefileshares
@@ -31,7 +32,6 @@ spec:
             secretName: storage-secret
             shareName: testfileshare1
             readOnly: false
-      
 
             
 # service type loadbalancer       
