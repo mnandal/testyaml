@@ -23,10 +23,6 @@ spec:
           name: azurefileshares
         ports:
         - containerPort: 8443
-        variables:
-        - group: TestVariablegroup
-        - name: connectionString
-          value: $[variables.connectionString]
         env:
         - name: connectionStringab
           value: "test"
@@ -36,8 +32,11 @@ spec:
             secretName: storage-secret
             shareName: testfileshare1
             readOnly: false
-
-            
+      variables:
+        - group: TestVariablegroup
+        - name: connectionString
+          value: "abc"
+              
 # service type loadbalancer       
 ---
 apiVersion: v1
