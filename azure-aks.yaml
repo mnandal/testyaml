@@ -25,7 +25,7 @@ spec:
         - containerPort: 8443
         env:
         - name: connectionString
-          value: "$(connectionString)"
+          value: $(connectionString)
       volumes:
         - name: azurefileshares
           azureFile:
