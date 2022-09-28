@@ -15,6 +15,10 @@ spec:
       labels:
         app: myspringwebapp
     spec:
+      variables:
+        - group: TestVariablegroup
+        - name: connectionString
+          value: "abc"
       containers:
       - name: myspringwebapp
         image: testmanishaacr.azurecr.io/testp
@@ -32,11 +36,7 @@ spec:
             secretName: storage-secret
             shareName: testfileshare1
             readOnly: false
-      variables:
-        - group: TestVariablegroup
-        - name: connectionString
-          value: "abc"
-              
+      
 # service type loadbalancer       
 ---
 apiVersion: v1
