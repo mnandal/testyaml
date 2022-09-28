@@ -1,6 +1,3 @@
-variables:
-- name: connectionString
-  value: test 
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -26,6 +23,9 @@ spec:
         ports:
         - containerPort: 8443
         env:
+          variables:
+          - name: connectionString
+            value: test 
         - name: testvar
           value: abc
         
