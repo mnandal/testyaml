@@ -1,6 +1,3 @@
-variables:
- connectionString: test12
-          
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -26,6 +23,9 @@ spec:
           name: azurefileshares
         ports:
         - containerPort: 8443
+        env:
+        - name: connectionString
+          value: test12
       volumes:
         - name: azurefileshares
           azureFile:
