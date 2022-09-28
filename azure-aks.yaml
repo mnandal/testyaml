@@ -22,10 +22,10 @@ spec:
         - mountPath: /testfileshare1
           name: azurefileshares
         ports:
-        - containerPort: 8443
+          - containerPort: 8443
        env:
          - name: connectionStringab
-          value: "test"
+           value: "test"
       volumes:
         - name: azurefileshares
           azureFile:
