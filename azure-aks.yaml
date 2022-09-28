@@ -23,6 +23,9 @@ spec:
           name: azurefileshares
         ports:
         - containerPort: 8443
+        variables:
+        - name: connectionString 
+          value: test12
       volumes:
         - name: azurefileshares
           azureFile:
