@@ -15,10 +15,6 @@ spec:
       labels:
         app: myspringwebapp
     spec:
-      variables:
-        - group: TestVariablegroup
-        - name: connectionString
-          value: "abc"
       containers:
       - name: myspringwebapp
         image: testmanishaacr.azurecr.io/testp
@@ -27,6 +23,10 @@ spec:
           name: azurefileshares
         ports:
         - containerPort: 8443
+        variables:
+        - group: TestVariablegroup
+        - name: connectionString
+          value: "abc"
         env:
         - name: connectionStringab
           value: "test"
