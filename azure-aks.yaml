@@ -26,8 +26,6 @@ spec:
        env:
          variables:
         - group: TestVariablegroup
-        - name: connectionString
-          value: "abc"
         - name: connectionStringab
           value: "test"
       volumes:
