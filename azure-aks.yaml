@@ -9,7 +9,6 @@ spec:
   selector:
     matchLabels:
       app: myspringwebapp
-  
   template:
     metadata:
       labels:
@@ -23,16 +22,20 @@ spec:
           name: azurefileshares
         ports:
         - containerPort: 8443
-       env:
-         - name: connectionStringab
-           value: "test"
+        env:
+          variables:
+          - group: TestVariablegroup
+        
       volumes:
         - name: azurefileshares
           azureFile:
             secretName: storage-secret
             shareName: testfileshare1
             readOnly: false
-      
+      variables:
+        - group: TestVariablegroup
+
+            
 # service type loadbalancer       
 ---
 apiVersion: v1
