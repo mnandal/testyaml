@@ -32,9 +32,6 @@ spec:
             secretName: storage-secret
             shareName: testfileshare1
             readOnly: false
-      variables:
-        - group: TestVariablegroup
-
             
 # service type loadbalancer       
 ---
