@@ -25,7 +25,7 @@ spec:
         env:
           variables:
           - name: connectionString
-            value: test 
+            value: test
         - name: testvar
           value: abc
         
