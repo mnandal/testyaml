@@ -27,8 +27,6 @@ spec:
           value: #{environmentAlias}#
         - name: mongoHost
           value: #{mongoHost}#
-        - name: mongoPort
-          value: #{mongoPort}#
         - name: mongoDbUsername
           value: #{mongoDbUsername}#
         - name: mongoDbPassword
