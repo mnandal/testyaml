@@ -25,14 +25,6 @@ spec:
         env:
         - name: environmentAlias
           value: #{environmentAlias}#
-        - name: mongoHost
-          value: #{mongo.host}#
-        - name: mongoPort
-          value: #{mongo.port}#
-        - name: mongoDbUsername
-          value: #{mongo.db.username}#
-        - name: mongoDbPassword
-          value: #{mongo.db.password}#
       volumes:
         - name: azurefileshares
           azureFile:
