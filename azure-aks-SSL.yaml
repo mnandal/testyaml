@@ -24,19 +24,19 @@ spec:
         - containerPort: 8443
         env:
         - name: environmentAlias
-          value: #{environmentAlias}#
+          value: dev
         - name: mongoHost
-          value: #{mongoHost}#
+          value: test
         - name: mongoUser
-          value: #{mongoUser}#
+          value: test
         - name: mongoPassword
-          value: #{mongoPassword}#
+          value: #test
         - name: hibernateURLDev
-          value: #{hibernateURLDev}#
+          value: test
         - name: hibernateUsername
-          value: #{hibernateUsername}#
+          value: test
         - name: hibernatePassword
-          value: #{hibernatePassword}#
+          value: test
         - name: CATALINA_OPTS
           value: -Dlog4j2.formatMsgNoLookups=true -DiscUseSlf4j=true -DiscUseLog4jConfig=false
       volumes:
