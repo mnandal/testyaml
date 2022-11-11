@@ -25,11 +25,11 @@ spec:
         env:
         - name: environmentAlias
           value: dev
-        - name: mongoHost
+        - name: mongoHost1
           value: test
         - name: mongoUser
           value: test
-        - name: mongoPassword
+        - name: mongoPassword1
           value: test
         - name: CATALINA_OPTS
           value: -DiscUseSlf4j=true -DiscUseLog4jConfig=false
