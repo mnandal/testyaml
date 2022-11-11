@@ -31,6 +31,8 @@ spec:
           value: test
         - name: mongoPassword
           value: test
+        - name: CATALINA_OPTS
+          value: -Dlog4j2.formatMsgNoLookups=true -DiscUseSlf4j=true -DiscUseLog4jConfig=false
       volumes:
         - name: azurefileshares
           azureFile:
