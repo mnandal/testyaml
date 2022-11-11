@@ -17,7 +17,6 @@ spec:
       containers:
       - name: myconnectwebapp
         image: testmanishaacr.azurecr.io/testconnectproject
-        args: ["-DiscUseSlf4j=true", "-DiscUseLog4jConfig=false"]
         volumeMounts:
         - mountPath: /testfileshare1
           name: azurefileshares
