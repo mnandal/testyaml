@@ -26,13 +26,13 @@ spec:
         - name: environmentAlias
           value: dev
         - name: mongoHost
-          value: test
+          value: USZE1SDB0026
         - name: mongoUser
-          value: test
+          value: USZE1SDB0026\mongoadmin
         - name: mongoPassword
-          value: #test
-        - name: hibernateURLDev
           value: test
+        - name: hibernateURLDev
+          value: jdbc:mysql://usze1sdb0025.mysql.database.azure.com:3306/myassaabloydev
         - name: hibernateUsername
           value: test
         - name: hibernatePassword
